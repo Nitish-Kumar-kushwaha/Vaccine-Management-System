@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaccine Management System</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <nav class="navbar navbar-expand-xl navbar-primary sticky-top">
+      <div class="container">
+        <div class="navbar-header">
+          <p class="navbar-brand">Vaccine Management System</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right ">
+          <li class="nav-item p-2"><a href="/">Home</a></li>
+          <li class="nav-item p-2"><a href="#">About Us</a></li>
+          <li class="nav-item p-2"><a href="#">Contact Us</a></li>
+          <li class="nav-item p-2"><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </head>
+</html>
+<body>
+  <div class="container-fluid">
+
+
+
+    <div class="row" >  
+        <div class="col col-md-6 " style="border-right:1px solid #b1b1b1;">
+            <h2 class="mx-3 py-5">Check & procced</h2>
+            <div class="mb-3 " >
+                <form action="/main" method="post" style="display: flex; flex-direction:row">
+                    <div class="mb-3 mx-3" >
+                        <label class="form-label"  >Enter centre name</label>
+                    </div>
+                    <div class="mb-3 mx-3" >
+                        <input type="text" name="centreName" class="form-control" placeholder="">
+                        <input type="hidden" name="search" value="true" />
+                    </div>
+                    <div class="mb-3 mx-3" >
+                        <button type="submit" class="btn btn-primary"> Search </button>
+                    </div>
+                </form>
+            </div>
+            <div class="mb-3">
+
+              <% if(typeof searchResult != 'undefined'){ %>
+                <div class="d-flex flex-row bd-highlight mb-3">
+                  <div style="width: 150px;" class="p-2 bd-highlight"> <%= searchResult.centreName %> </div>
+                  <div style="width: 150px;" class="p-2 bd-highlight"> <%= searchResult.address %> </div>
+                  <div style="width: 150px;" class="p-2 bd-highlight"> <%= searchResult.status %> </div>
+            </div>
+              <% if(searchResult.status === "availabe"){%> 
+            <button type="submit" class="btn bd-primary"> <a href="/proceed">Next</a></button>
+                <% }else{ %>
+                  <div class="mb-3">
+                    <p class="mb-3"> Sorry! but vaccine will be available soon</p>
+                  </div>
+                  <% } %>  
+              <% }else{ %> <%= message %> <% } %>
+              
+            </div>
+        </div>
+        <div class="col col-md-6 border-right-0" >
+           <div class="container">
+            <h2 class="mx-3 py-3">Cente Details</h2>
+            <div class="mb-3">
+                
+                    <% for(var i=0; i < result.length; i++) { %>
+                       <div class="d-flex flex-row bd-highlight mb-3">
+                            <div style="width: 150px;" class="p-2 bd-highlight"><%= result[i].centreName %></div>
+                            <div style="width: 150px;" class="p-2 bd-highlight"><%= result[i].address %></div>
+                            <!-- <div style="width: 150px;" class="p-2 bd-highlight"><%= result[i].status %></div> -->
+                      </div>
+
+                    <% } %>
+                    
+            </div>
+           </div>
+        </div>
+    </div>
+
+
+<%- include('../views/partials/footer') %> 

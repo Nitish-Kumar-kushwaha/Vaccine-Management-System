@@ -1,0 +1,26 @@
+html {
+  background-color: #eeeeee;
+}
+
+nav {
+  background-color: #eeeeee;
+}
+
+.footer {
+  background-color: #eeeeee;
+}
+
+#confor {
+  background-color: #eeeeee;
+  /* filter: blur(4px); */
+}
+
+#box {
+  line-height: 15px;
+  /* margin: auto; */
+  padding: 20px;
+  height: auto;
+  width: 50%;
+  position: relative;
+  top: 150px;
+}

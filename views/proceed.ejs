@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaccine Management System</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <nav class="navbar navbar-expand-xl navbar-primary sticky-top">
+      <div class="container">
+        <div class="navbar-header">
+          <p class="navbar-brand">Vaccine Management System</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right ">
+          <li class="nav-item p-2"><a href="/">Home</a></li>
+          <li class="nav-item p-2"><a href="#">About Us</a></li>
+          <li class="nav-item p-2"><a href="#">Contact Us</a></li>
+          <li class="nav-item p-2"><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </head>
+</html>
+<body>
+  <div class="container-fluid">
+
+<div class="mx-5 px-4" style="text-align:center">
+    <h3>Book Vaccine get Vaccinted and participate your one step towards Humanity </h3>
+</div>
+
+<div class="container mt-3 mb-3 py-5 shadow" style="width: 600px;">
+    <form action="/proceed" method="post">
+      <div class="mb-3">
+            <label for="" class="form-label">Name Of Applicant</label>
+            <input type="text" name="applicantAame" id="" class="form-control" placeholder="Enter the name" required>
+      </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Date for vaccinationation</label>
+            <input type="date" name="date_of_dose" id="" class="form-control" required>      
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Vaccine</label>
+            <input list="vaccines" name="vaccinesName" class="form-control" required>
+            <datalist id="vaccines">
+                <option value="Covishield">
+                <option value="Covaxin">
+                <option value="Sputnik-V">
+                <option value="Zydus">
+                <option value="Pfizer">
+            </datalist>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Dose</label>
+          <input list="doses" name="dose" class="form-control" required>
+          <datalist id="doses">
+              <option value="Dose 1">
+              <option value="Dose 2">
+              
+          </datalist>
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Slot</label>
+        <input list="times" name="time" class="form-control" required>
+        <datalist id="times">
+            <option value="10:00AM - 11:30AM">
+            <option value="12:00PM - 01:30PM">
+            <option value="02:00PM - 03:30PM">
+        </datalist>
+    </div>
+        <button type="submit" class="btn btn-primary">Book</button>
+    </form>
+</div>
+
+
+
+    <%- include('../views/partials/footer') %> 
