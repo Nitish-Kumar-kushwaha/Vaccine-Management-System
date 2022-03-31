@@ -9,4 +9,4 @@ This is complete full-stack project based on express js for backend and Mongodb 
 4) Book the vaccine  
 5) Logout
 
-![screen shot] (https://drive.google.com/file/d/16YL-DZguX-iLPQSPHI4Z0oa7aygk5ups/view?usp=sharing)
+![screen shot](https://drive.google.com/file/d/16YL-DZguX-iLPQSPHI4Z0oa7aygk5ups/view?usp=sharing)
